@@ -7,7 +7,7 @@ Objective: To write a sample framework for amazon page object model using, testN
 Chromedrive
 https://chromedriver.storage.googleapis.com/index.html?path=97.0.4692.71/
 mac users only
-xattr -d com.apple.quarantine /Users/mramai435/Downloads/chromedriver
+xattr -d com.apple.quarantine /Users/muthu/Downloads/chromedriver
 
 java version 11
 maven version 3.5.4
