@@ -2,12 +2,6 @@ package com.amazon.fw;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-import org.apache.commons.codec.binary.Base64;
-import org.everit.json.schema.Schema;
-import org.everit.json.schema.ValidationException;
-import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONException;
-import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,44 +25,12 @@ public class Util {
     private static final String HEXA = "0123456789abcdef";
     Util() { }
 
-    public static List<String> isValidSchema(String schema, String input) throws JSONException {
-        List<String> results = null;
-
-        JSONObject jsonSchema = new JSONObject(schema);
-        Schema schemaObj = SchemaLoader.load(jsonSchema);
-        try {
-            schemaObj.validate(new JSONObject(input));
-        }
-        catch (ValidationException ve) {
-//            System.out.println(ve.getCausingExceptions());
-            results = ve.getAllMessages();
-        }
-        return results;
-    }
-
     public static Map<String, Boolean> validateJson(List<String> values, String input){
         Map<String, Boolean> results = new HashMap<>();
         for(String value: values)
             if (!input.contains(value))
                 results.put(value, false);
         return results;
-    }
-
-    /**
-     * Quick utility method to decode a base64 encoded string
-     * @param value - length of random string
-     */
-    public static String decode(String value){
-        byte[] decoded = Base64.decodeBase64(value);
-        return new String(decoded);
-    }
-
-    /**
-     * Quick utility method to base64 encode a string
-     * @param value - string
-     */
-    public static String encode(String value){
-        return Base64.encodeBase64String(value.getBytes());
     }
 
     /**

@@ -112,10 +112,9 @@ public class SearchSteps extends AbstractTest {
 
     @And("Write gathered information for item: {string} into csv file")
     public void writeGatheredInformationForItemItemIntoCsvFile(String item) throws IOException {
-        logger.info(stream);
+//        logger.info(stream);
         String[] classpathEntries = System.getProperty("java.class.path").split(File.pathSeparator);
         String path = classpathEntries[1].replaceAll("target/classes", "results");
-        logger.info(path);
         String fileName = path + "/" + item.replaceAll(" ", "_") + "_" +
                 Util.Date.currentEpoch2String() + ".csv";
         logger.info("CSV file path: " + fileName);
