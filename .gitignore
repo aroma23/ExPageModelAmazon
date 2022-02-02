@@ -1,0 +1,14 @@
+.idea
+target
+*.iml
+*.prefs
+.project
+.classpath
+/logs
+.DS_Store
+/results
+src/test/java/com/snp/da/ms/
+settings.mvn
+src/test/java/com/snp/da/wf/
+src/test/resources/com/snp/da/ms/
+src/test/resources/com/snp/da/wf/
