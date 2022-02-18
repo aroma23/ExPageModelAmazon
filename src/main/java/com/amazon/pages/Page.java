@@ -18,7 +18,7 @@ public abstract class Page {
         PageFactory.initElements(browser, this);
     }
 
-    protected void waitTillLoad(By locator, int secs) {
+    public void waitTillLoad(By locator, int secs) {
         new WebDriverWait(browser, Duration.ofSeconds(secs)).until(ExpectedConditions.visibilityOfElementLocated(
                 locator));
     }

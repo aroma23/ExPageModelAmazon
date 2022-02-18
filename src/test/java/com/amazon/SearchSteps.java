@@ -5,6 +5,7 @@ import com.amazon.fw.Util;
 import com.amazon.pages.HomePage;
 import com.amazon.pages.ItemPage;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
@@ -24,6 +25,7 @@ public class SearchSteps extends AbstractTest {
     //Pages needed for this test scenario
     HomePage homePage;
     ItemPage itemPage;
+    byte[] screenshot;
 
     // context needed for various steps
     List<WebElement> resultsList;
@@ -37,6 +39,7 @@ public class SearchSteps extends AbstractTest {
 
     @Before
     public void setUp(Scenario scenario){
+        this.scenario = scenario;
         logger.info("========== Scenario: "
                 + scenario.getName() + ": Line: " + scenario.getLine() + " started ==========");
     }
@@ -51,6 +54,11 @@ public class SearchSteps extends AbstractTest {
         homePage.sortResults("blah blah blah");
     }
 
+//    @AfterStep
+    public void addScreenShot(Scenario scenario) {
+        screenShot("");
+    }
+
     @After
     public void closeBrower() {
         browser.close();
@@ -61,12 +69,14 @@ public class SearchSteps extends AbstractTest {
         logger.info("Item searched: " + item);
 //        homePage.searchItem(item);
         homePage.searchViaUrl(item, sortOption);
+        screenShot("Launched");
     }
 
     @Then("Search results should be displayed")
     public void searchResultsShouldBeDisplayed() {
         resultsList = homePage.getSearchResults();
         Assert.assertTrue("Result count is zero", resultsList.size() > 0);
+        screenShot("Results");
     }
 
     @And("Fetch urls into context for {int} individual items")

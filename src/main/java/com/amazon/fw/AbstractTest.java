@@ -3,6 +3,8 @@ package com.amazon.fw;
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -40,5 +42,12 @@ public abstract class AbstractTest {
             }
             areClientsInitialized = true;
         }
+    }
+
+    public void screenShot(String name) {
+        if (name.isEmpty() || name.isBlank())
+            name = "Screenshot";
+        scenario.attach(((TakesScreenshot)browser).getScreenshotAs(OutputType.BYTES), "image/png",
+                name);
     }
 }
