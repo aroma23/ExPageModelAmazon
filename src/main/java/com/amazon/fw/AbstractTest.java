@@ -45,9 +45,11 @@ public abstract class AbstractTest {
     }
 
     public void screenShot(String name) {
-        if (name.isEmpty() || name.isBlank())
-            name = "Screenshot";
         scenario.attach(((TakesScreenshot)browser).getScreenshotAs(OutputType.BYTES), "image/png",
                 name);
+    }
+
+    public void screenShot() {
+        screenShot("Screenshot");
     }
 }

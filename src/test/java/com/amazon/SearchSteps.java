@@ -47,6 +47,7 @@ public class SearchSteps extends AbstractTest {
     @Given("Application is launched")
     public void applicationIsLaunched() {
         logger.info("Launched");
+        screenShot("Launched");
     }
 
     @And("Sort price high to low option is clicked")
@@ -56,7 +57,7 @@ public class SearchSteps extends AbstractTest {
 
 //    @AfterStep
     public void addScreenShot(Scenario scenario) {
-        screenShot("");
+        screenShot();
     }
 
     @After
@@ -69,7 +70,6 @@ public class SearchSteps extends AbstractTest {
         logger.info("Item searched: " + item);
 //        homePage.searchItem(item);
         homePage.searchViaUrl(item, sortOption);
-        screenShot("Launched");
     }
 
     @Then("Search results should be displayed")
@@ -111,6 +111,7 @@ public class SearchSteps extends AbstractTest {
             logger.info("Price: " + itemPage.getPrice());
             logger.info("Review: " + itemPage.getReview());
             stream.append(temp).append("\n");
+            screenShot(itemPage.getProductTitle());
         }
     }
 

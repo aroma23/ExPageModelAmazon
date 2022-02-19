@@ -116,7 +116,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <projectName>NetIQ QA Tests</projectName>
+              <projectName>Amazon POM</projectName>
               <outputDirectory>${project.build.directory}</outputDirectory>
               <jsonFiles>
                 <param>**/cucumber.json</param>
@@ -125,6 +125,7 @@
               <classifications>
                 <version>${project.version}</version>
                 <Platform>${os.name}</Platform>
+                <!--suppress UnresolvedMavenProperty -->
                 <Branch>${git.branch}</Branch>
               </classifications>
             </configuration>
