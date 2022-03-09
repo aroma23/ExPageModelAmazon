@@ -50,3 +50,5 @@ linkedin: https://www.linkedin.com/in/muthukumar-ramaiyah-785673a0/
 
 [comment]: <> (POM related)
 [comment]: <> (https://www.toolsqa.com/selenium-cucumber-framework/page-object-design-pattern-with-selenium-pagefactory-in-cucumber/)
+
+[comment]: <> ('date && mvn clean test -Dcucumber.features=@rerun.txt -Dfeign.ssl.trust.all=true')

@@ -1,5 +1,6 @@
 package com.qa.caesars;
 
+import com.qa.CommonSteps;
 import com.qa.caesars.pages.LoginPage;
 import com.qa.fw.AbstractTest;
 import io.cucumber.java.After;
@@ -12,17 +13,12 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class CaesarsSteps extends AbstractTest {
-    private LoginPage loginPage;
+    LoginPage loginPage;
 
-    public CaesarsSteps() {
+    public CaesarsSteps(CommonSteps commonSteps) {
         loginPage = new LoginPage(browser, properties.getProperty("caesars.login.url"));
-    }
-
-    @Before("@Login")
-    public void setUp(Scenario scenario){
-        this.scenario = scenario;
-        logger.info("========== Scenario: "
-                + scenario.getName() + ": Line: " + scenario.getLine() + " started ==========");
+        commonSteps.browser = browser;
+        scenario = commonSteps.scenario;
     }
 
     @Given("Login page is launched")
@@ -44,11 +40,6 @@ public class CaesarsSteps extends AbstractTest {
         String innerText = loginPage.getElement(By.cssSelector("#login > ul > li")).getAttribute("innerText");
         logger.info("Error message from login: " + innerText);
         Assert.assertEquals("Error not matched", errMsg, innerText);
-    }
-
-    @After("@Login")
-    public void closeBrower() {
-        browser.close();
     }
 
 }

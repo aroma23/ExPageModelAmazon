@@ -1,5 +1,6 @@
 package com.qa.amazon;
 
+import com.qa.CommonSteps;
 import com.qa.fw.AbstractTest;
 import com.qa.fw.Util;
 import com.qa.amazon.pages.HomePage;
@@ -24,23 +25,17 @@ public class SearchSteps extends AbstractTest {
     //Pages needed for this test scenario
     HomePage homePage;
     ItemPage itemPage;
-    byte[] screenshot;
 
     // context needed for various steps
     List<WebElement> resultsList;
     List<String> resultItemsUrl = new ArrayList<>();
     StringBuffer stream = new StringBuffer();
 
-    public SearchSteps() {
+    public SearchSteps(CommonSteps commonSteps) {
         homePage = new HomePage(browser, properties.getProperty("base.url"));
         stream.append("prodducts&desc,seller,price,review").append("\n");
-    }
-
-    @Before("@Search")
-    public void setUp(Scenario scenario){
-        this.scenario = scenario;
-        logger.info("========== Scenario: "
-                + scenario.getName() + ": Line: " + scenario.getLine() + " started ==========");
+        commonSteps.browser = browser;
+        scenario = commonSteps.scenario;
     }
 
     @Given("Application is launched")
@@ -57,11 +52,6 @@ public class SearchSteps extends AbstractTest {
     //    @AfterStep
     public void addScreenShot(Scenario scenario) {
         screenShot();
-    }
-
-    @After("@Search")
-    public void closeBrower() {
-        browser.close();
     }
 
     @When("{string} is searched and sorted with {string}")
