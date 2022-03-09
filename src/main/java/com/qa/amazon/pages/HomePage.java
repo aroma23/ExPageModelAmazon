@@ -1,12 +1,13 @@
-package com.amazon.pages;
+package com.qa.amazon.pages;
 
+import com.qa.fw.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
-public class HomePage extends Page{
+public class HomePage extends BasePage {
 
     @FindBy(id="twotabsearchtextbox")
     private WebElement searchBox;

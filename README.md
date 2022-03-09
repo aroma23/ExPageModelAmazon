@@ -5,7 +5,8 @@ Objective: To write a sample framework for amazon page object model using, testN
 ## Requirements
 ```commandline
 Chromedrive
-https://chromedriver.storage.googleapis.com/index.html?path=97.0.4692.71/
+Makesure to match your chrome browser version
+https://chromedriver.storage.googleapis.com/index.html?path=98.0.4758.102/
 mac users only
 xattr -d com.apple.quarantine /Users/muthu/Downloads/chromedriver
 
@@ -21,6 +22,7 @@ This software framework tested only in mac os so far
 ```commandline
 Set path.to.chromedriver property  in dev.properties point to path of your chromedriver
 mvn clean test -Droot.log.level=info -Dcucumber.filter.tags=@Search
+mvn clean test -Droot.log.level=info -Dcucumber.filter.tags=@Login
 ```
 
 ##cucumber-report
@@ -42,9 +44,9 @@ Muthukumar Ramaiyah
 linkedin: https://www.linkedin.com/in/muthukumar-ramaiyah-785673a0/ 
 ```
 
+[comment]: <> (Selenium related)
+[comment]: <> (https://www.toolsqa.com/selenium-cucumber-framework/cucumber-automation-framework/)
+[comment]: <> (https://www.softwaretestinghelp.com/selenium-webdriver-cucumber-selenium-tutorial-31/)
 
-
-
-
-
-
+[comment]: <> (POM related)
+[comment]: <> (https://www.toolsqa.com/selenium-cucumber-framework/page-object-design-pattern-with-selenium-pagefactory-in-cucumber/)

@@ -1,4 +1,4 @@
-package com.amazon.fw;
+package com.qa.fw;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;

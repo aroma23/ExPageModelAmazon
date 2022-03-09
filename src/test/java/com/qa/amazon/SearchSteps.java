@@ -1,11 +1,10 @@
-package com.amazon;
+package com.qa.amazon;
 
-import com.amazon.fw.AbstractTest;
-import com.amazon.fw.Util;
-import com.amazon.pages.HomePage;
-import com.amazon.pages.ItemPage;
+import com.qa.fw.AbstractTest;
+import com.qa.fw.Util;
+import com.qa.amazon.pages.HomePage;
+import com.qa.amazon.pages.ItemPage;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
@@ -37,7 +36,7 @@ public class SearchSteps extends AbstractTest {
         stream.append("prodducts&desc,seller,price,review").append("\n");
     }
 
-    @Before
+    @Before("@Search")
     public void setUp(Scenario scenario){
         this.scenario = scenario;
         logger.info("========== Scenario: "
@@ -55,12 +54,12 @@ public class SearchSteps extends AbstractTest {
         homePage.sortResults("blah blah blah");
     }
 
-//    @AfterStep
+    //    @AfterStep
     public void addScreenShot(Scenario scenario) {
         screenShot();
     }
 
-    @After
+    @After("@Search")
     public void closeBrower() {
         browser.close();
     }

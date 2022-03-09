@@ -1,11 +1,12 @@
-package com.amazon.pages;
+package com.qa.amazon.pages;
 
+import com.qa.fw.BasePage;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ItemPage extends Page{
+public class ItemPage extends BasePage {
     private static final String NA = "not available";
 
     @FindBy(id="productTitle")

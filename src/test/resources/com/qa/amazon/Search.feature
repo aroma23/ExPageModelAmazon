@@ -14,7 +14,7 @@ Feature: Search Items
 
     Examples:
       | item                | option          | count |
-      | Bluetooth headset   | price-desc-rank | 3     |
-      | 34 inch LED monitor | price-desc-rank | 2     |
-      | USB c dock          | price-asc-rank  | 2     |
-      | Smart Watch         | price-asc-rank  | 2     |
+      | Bluetooth headset   | price-desc-rank | 1     |
+#      | 34 inch LED monitor | price-desc-rank | 2     |
+#      | USB c dock          | price-asc-rank  | 2     |
+#      | Smart Watch         | price-asc-rank  | 2     |

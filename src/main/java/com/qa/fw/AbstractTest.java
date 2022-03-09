@@ -1,4 +1,4 @@
-package com.amazon.fw;
+package com.qa.fw;
 
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
