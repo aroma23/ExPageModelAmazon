@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazon.pom</groupId>
-  <artifactId>AmazonPOM</artifactId>
+  <artifactId>ExPageModelAmazon</artifactId>
   <version>2.0</version>
   <name>Cucumber-Java-TestNG</name>
   <properties>
