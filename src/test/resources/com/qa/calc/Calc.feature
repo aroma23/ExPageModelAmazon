@@ -3,9 +3,9 @@ Feature: Calc
 
   Scenario Outline: Multiply
     Given Calc is launched
-#    When Credentials: '<email>' and '<password>' passed to application
-#    Then Error: 'Wrong email address or password' message popup
-#
+    When OperandA: '<operandA>', Operator '<operator>', and  OperandB: '<operandB>' are clicked
+    Then Validate result: '<result>' matches in display
+
     Examples:
-      | email               | password      |
-      | stringify@gmail.com | password1234 |
+      | operandA | operator | operandB | result |
+      | 8        | x        | 3        | 24     |

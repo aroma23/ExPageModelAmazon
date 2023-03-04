@@ -201,13 +201,6 @@
   </build>
   <profiles>
     <profile>
-      <id>local</id>
-      <properties>
-        <test.env>local</test.env>
-        <threadCount>1</threadCount>
-      </properties>
-    </profile>
-    <profile>
       <id>dev</id>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -216,39 +209,6 @@
         <test.env>dev</test.env>
         <threadCount>1</threadCount>
       </properties>
-    </profile>
-    <profile>
-      <id>qa</id>
-      <properties>
-        <test.env>qa</test.env>
-        <threadCount>1</threadCount>
-      </properties>
-    </profile>
-    <profile>
-      <id>uat</id>
-      <properties>
-        <test.env>uat</test.env>
-        <threadCount>1</threadCount>
-      </properties>
-    </profile>
-    <profile>
-      <id>prod</id>
-      <properties>
-        <test.env>prod</test.env>
-        <threadCount>1</threadCount>
-      </properties>
-    </profile>
-    <profile>
-      <id>stage</id>
-      <properties>
-        <test.env>stage</test.env>
-        <threadCount>1</threadCount>
-      </properties>
-    </profile>
-    <profile>
-      <id>owasp-dependency-check</id>
-      <build>
-      </build>
     </profile>
   </profiles>
 </project>

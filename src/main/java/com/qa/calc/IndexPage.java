@@ -1,32 +1,25 @@
 package com.qa.calc;
 
 import com.qa.fw.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Arrays;
+
 public class IndexPage extends BasePage {
-
-    @FindBy(id="id_email")
-    private WebElement emailTextBox;
-
-    @FindBy(id="id_password")
-    private WebElement passwordTextBox;
-
-    @FindBy(id="id_login_submit")
-    private WebElement submitButton;
-
-    @FindBy(css = "#login > ul > li")
-    private WebElement errorLabel;
+    @FindBy(id="display")
+    public WebElement display;
 
     public IndexPage(WebDriver browser, String url) {
         super(browser);
         browser.get(url);
     }
 
-    public void login(String email, String pwd) {
-        emailTextBox.sendKeys(email);
-        passwordTextBox.sendKeys(pwd);
-        submitButton.click();
+    public WebElement getButton(String operandOrOperator) {
+        return browser.findElement(By.id(Arrays.stream(Buttons.values())
+                .filter(b -> b.getButtonState().equalsIgnoreCase(operandOrOperator)).findFirst().orElseThrow()
+                .toString()));
     }
 }
