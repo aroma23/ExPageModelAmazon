@@ -23,6 +23,7 @@ This software framework tested only in mac os so far
 Set path.to.chromedriver property  in dev.properties point to path of your chromedriver
 mvn clean test -Droot.log.level=info -Dcucumber.filter.tags=@Search
 mvn clean test -Droot.log.level=info -Dcucumber.filter.tags=@Login
+mvn clean test -Droot.log.level=info -Dcucumber.filter.tags=@Calc
 ```
 
 ##cucumber-report

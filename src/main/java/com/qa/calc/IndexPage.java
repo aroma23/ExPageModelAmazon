@@ -1,12 +1,11 @@
-package com.qa.caesars.pages;
+package com.qa.calc;
 
 import com.qa.fw.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
-public class LoginPage extends BasePage {
+public class IndexPage extends BasePage {
 
     @FindBy(id="id_email")
     private WebElement emailTextBox;
@@ -20,7 +19,7 @@ public class LoginPage extends BasePage {
     @FindBy(css = "#login > ul > li")
     private WebElement errorLabel;
 
-    public LoginPage(WebDriver browser, String url) {
+    public IndexPage(WebDriver browser, String url) {
         super(browser);
         browser.get(url);
     }
